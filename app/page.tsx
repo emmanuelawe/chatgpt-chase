@@ -2,16 +2,18 @@ import { ExclamationIcon, LightningBoltIcon, SunIcon } from '@heroicons/react/ou
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen
+    <div className="flex flex-col  items-center justify-center h-screen
     px-2 text-white">
-      <h1 className="text-5xl font-bold mb-20">ChatGPT</h1>
+      <h1 className="text-5xl font-bold mb-10">ChatGPT</h1>
 
-    <div className='flex space-x-2 text-center'>
-      <div>
+
+    <div className='grid grid-cols-1 gap-8 space-x-2 text-center'>
+      <div className='md:grid md:grid-cols-3 gap-4 max-w-[700px]'>
+      <div >
         <div className="flex flex-col items-center justify-center mb-5">
           <SunIcon className='h-8 w-8' />
           <h2>Examples</h2>
-        </div>
+        </div> 
 
       <div className="space-y-2"> 
         <p className="infoText">&quot;Explain something to me&quot;</p>
@@ -48,9 +50,10 @@ const HomePage = () => {
       </div>
 
       </div>
+      </div>
+    </div>
     </div>
 
-    </div>
   )
 }
 
