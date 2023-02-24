@@ -1,32 +1,35 @@
-import { ExclamationIcon, LightningBoltIcon, SunIcon } from '@heroicons/react/outline'
+import NavBar from '@/components/NavBar'
+import NewChat from '@/components/NewChat'
+import { ExclamationIcon, LightningBoltIcon, MenuAlt1Icon, SunIcon } from '@heroicons/react/outline'
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col  items-center justify-center h-screen
-    px-2 text-white">
-      <h1 className="text-5xl font-bold mb-10">ChatGPT</h1>
+    <div className="flex flex-col items-center justify-center h-screen
+    px-2 text-[#ECECF1]">
+
+      <h1 className="mt-10 text-4xl font-semibold mb-10">ChatGPT</h1>
 
 
     <div className='grid grid-cols-1 gap-8 space-x-2 text-center'>
       <div className='md:grid md:grid-cols-3 gap-4 max-w-[700px]'>
       <div >
         <div className="flex flex-col items-center justify-center mb-5">
-          <SunIcon className='h-8 w-8' />
-          <h2>Examples</h2>
+          <SunIcon className='h-7 w-7 mb-1' />
+          <h2 className='text-lg'>Examples</h2>
         </div> 
 
       <div className="space-y-2"> 
-        <p className="infoText">&quot;Explain something to me&quot;</p>
-        <p className="infoText">&quot;What is the difference between a dog and a cat?&quot;</p>
-        <p className="infoText">&quot;What is the color of the sun?&quot;</p>
+        <p className="infoText">&quot;Explain something to me&quot; →</p>
+        <p className="infoText">&quot;What is the difference between a dog and a cat?&quot; →</p>
+        <p className="infoText">&quot;What is the color of the sun?&quot; →</p>
       </div>
 
       </div>
 
       <div>
         <div className="flex flex-col items-center justify-center mb-5">
-          <LightningBoltIcon className='h-8 w-8' />
-          <h2>Capabilities</h2>
+          <LightningBoltIcon className='h-7 w-7 mb-1' />
+          <h2 className='text-lg'>Capabilities</h2>
         </div>
 
       <div className="space-y-2"> 
@@ -39,8 +42,8 @@ const HomePage = () => {
 
       <div>
         <div className="flex flex-col items-center justify-center mb-5">
-          <ExclamationIcon className='h-8 w-8' />
-          <h2>Limitations</h2>
+          <ExclamationIcon className='h-7 w-7 mb-1' />
+          <h2 className='text-lg'>Limitations</h2>
         </div>
 
       <div className="space-y-2"> 

@@ -66,8 +66,8 @@ const ChatInput = ({chatId}: Props) => {
     }
 
   return (
-    <div className="bg-gray-700/50 text-gray-400 rounded-lg text-sm">
-        <form onSubmit={sendMessage} className="p-5 space-x-5 flex">
+    <div className="bg-[#41414E] md:mx-32 mx-3 md:mb-12 mb-14 text-gray-400 rounded-lg text-sm">
+        <form onSubmit={sendMessage} className="p-3 space-x-5 flex">
             <input
             className="bg-transparent focus:outline-none flex-1
             disabled:cursor-not-allowed disabled:text-gray-300"
@@ -85,11 +85,6 @@ const ChatInput = ({chatId}: Props) => {
                 <PaperAirplaneIcon className="h-4 w-4 rotate-45" />
             </button>
         </form>
-
-        <div className="md:hidden">
-            {/* Model Selection */}
-            <ModelSelection />
-        </div>
     </div>
   )
 }

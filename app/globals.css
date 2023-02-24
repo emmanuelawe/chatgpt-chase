@@ -5,7 +5,7 @@
 
 @layer components {
     .infoText {
-        @apply p-4 bg-gray-700/50 h-20 text-center text-sm rounded-lg max-w-[300px]
+        @apply p-4 bg-[#3E3E4A] h-auto text-center text-sm rounded-lg max-w-[300px]
     }
 
     .chatRow {

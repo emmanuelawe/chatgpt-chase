@@ -6,6 +6,7 @@ import { collection, orderBy, query } from "firebase/firestore"
 import { db } from "@/firebase"
 import ChatRow from "./ChatRow"
 import ModelSelection from "./ModelSelection"
+import { LogoutIcon } from "@heroicons/react/solid"
 
 const SideBar = () => {
 const {data: session} = useSession()
@@ -18,7 +19,7 @@ const [chats, loading, error] = useCollection(
 
   
   return (
-    <div className="p-2 flex flex-col h-screen">
+    <div className="p-2 hidden md:flex flex-col h-screen">
        <div className="flex-1">
         <div>
             {/* New Chat */}
@@ -29,10 +30,10 @@ const [chats, loading, error] = useCollection(
               <ModelSelection />
             </div>
 
-            <div className="flex flex-col space-y-2 my-2">
+            <div className="flex flex-col space-y-2 my-2 overflow-y-auto">
 
               {loading && (
-                <div className="animate-pulse text-center text-white">
+                <div className="animate-pulse text-center text-[#ECECF1]">
                   <p>Loading Chats...</p>
                   </div>
               )}
@@ -44,11 +45,18 @@ const [chats, loading, error] = useCollection(
         </div>
        </div>
        {session && (
+        <div onClick={() => signOut()}
+        className='flex items-center justify-center mx-6 cursor-pointer mb-4'
+        >
+          <div className="flex text-[#ECECF1] flex space-x-2 text-sm items-center">
+          <LogoutIcon className="h-4 w-4 mt-0.5"/>
+          <p>Log out</p>
+          </div>
         <img 
-        onClick={() => signOut()}
         src={session.user?.image!} alt="Profile pic" 
-        className=" h-12 w-12 rounded-full cursor-pointer mx-auto mb-2 hover:opacity-50"
+        className="mt-2 h-7 w-7 rounded-full cursor-pointer mx-auto mb-2 hover:opacity-50"
         />
+        </div>
        )}
         </div>
   )

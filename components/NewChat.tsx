@@ -20,7 +20,7 @@ const NewChat = () => {
   }
 
   return (
-    <div onClick={createNewChat} className="border-gray-700 border chatRow">
+    <div onClick={createNewChat} className="border-gray-600 border rounded-md px-5 py-3 text-sm  flex items-center -justify-end space-x-2 hover:bg-gray-700/70 cursor-pointer text-[#ECECF1] transition-all duration-200 ease-out">
         <PlusIcon className="h-4 w-4" />
         <p>New Chat</p>
     </div>

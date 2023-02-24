@@ -5,6 +5,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import Login from '@/components/Login'
 import ClientProvider from '@/components/ClientProvider'
+import NavBar from '@/components/NavBar'
 
 
 export default async function RootLayout({
@@ -23,15 +24,16 @@ export default async function RootLayout({
             <Login />
           ): (
         <div className='flex'>
-          <div className='bg-[#202123] max-w-xs h-screen overflow-y-auto
-          md:min-w-[20rem]'>
+          <div className='bg-[#212023] max-w-xs h-screen 
+          md:min-w-[16.4rem]'>
       <SideBar />
           </div>
 
       {/* Client Provider - Notification */}
       <ClientProvider />
 
-      <div className='bg-[#343541] md:flex-1'>
+      <div className='bg-[#353540] flex-grow md:flex-1'>
+        <NavBar />
       {children}
       </div>
         </div>
