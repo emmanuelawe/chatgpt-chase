@@ -54,17 +54,19 @@ const [chats, loading, error] = useCollection(
   }
 
   return (
-    <div className={`${isScrolled && 'bg-[#353540]'} fixed top-0 w-full p-2 px-4 mb-8 justify-between items-center md:hidden flex text-md text-[#ECECF1] border h-10 border-gray-600`}>
+    <div className={`${isScrolled && 'bg-[#353540]'} bg-[#353540] fixed top-0 w-full p-2 px-4 mb-8 justify-between items-center md:hidden flex text-md text-[#ECECF1] border h-10 border-gray-600`}>
         <MenuIcon onClick={handleNav} className='h-6 w-6'/>
         <p>New Chat</p>
-        <div onClick={createNewChat} className='cursor-pointer'>
+        <div>
+          <div onClick={createNewChat} className='cursor-pointer' >
         <PlusIcon className="h-6 w-6" />
+          </div>
         
 
         {/* The slide animation of the Side bar when Menu Icon is clicked */}
 
         <div className={nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/10' : ''}>
-    <div className={nav ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#212023]  px-8 ease-in duration-500' 
+    <div className={nav ? 'fixed left-0 top-0 w-[65%] sm:w-[60%] md:w-[45%] h-screen bg-[#212023]  px-8 ease-in duration-500' 
     : 'fixed left-[-100%] top-0 ease-in duration-500'}>
         
         <div className="flex flex-col h-screen">
@@ -84,7 +86,7 @@ const [chats, loading, error] = useCollection(
               <ModelSelection />
             </div>
 
-            <div className="flex flex-col space-y-2 my-2 overflow-y-auto">
+            <div className="flex flex-col space-y-2 my-2 scrollbar-hide overflow-y-auto max-h-80">
 
               {loading && (
                 <div className="animate-pulse text-center text-[#ECECF1]">
