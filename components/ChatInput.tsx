@@ -66,7 +66,7 @@ const ChatInput = ({chatId}: Props) => {
     }
 
   return (
-    <div className="bg-[#41414E] md:mx-32 mx-3 md:mb-12 mb-14 text-gray-400 rounded-lg text-sm">
+    <div className="fixed bottom-2 w-[95%] md:w-[60%]  bg-[#41414E] md:mx-32 mx-3 md:mb-12 mb-14 text-gray-400 rounded-lg text-sm">
         <form onSubmit={sendMessage} className="p-3 space-x-5 flex">
             <input
             className="bg-transparent focus:outline-none flex-1

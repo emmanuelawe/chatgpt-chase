@@ -1,12 +1,13 @@
 'use client'
 
+
 import { db } from "@/firebase"
 import { MenuAlt1Icon, MenuAlt2Icon, MenuIcon, PlusIcon, XIcon } from "@heroicons/react/outline"
 import { LogoutIcon } from "@heroicons/react/solid"
 import { addDoc, collection, orderBy, query, serverTimestamp } from "firebase/firestore"
 import { signOut, useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useCollection } from "react-firebase-hooks/firestore"
 import ChatRow from "./ChatRow"
 import ModelSelection from "./ModelSelection"
@@ -16,11 +17,28 @@ const NavBar = () => {
     const router = useRouter()
   const {data: session} = useSession()
   const [nav, setNav] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
 const [chats, loading, error] = useCollection(
   session && query(collection(db, 'users', session.user?.email!, 'chats'),
   orderBy('createdAt', 'asc'))
 )
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true)
+      } else
+      setIsScrolled(false)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+    
+  }, [])
+
 
   const createNewChat = async () => {
     const doc = await addDoc(collection(db, 'users', session?.user?.email!, 'chats', ), {
@@ -36,7 +54,7 @@ const [chats, loading, error] = useCollection(
   }
 
   return (
-    <div className='p-2 px-4 mb-8 justify-between items-center md:hidden flex text-md text-[#ECECF1] border h-10 border-gray-600'>
+    <div className={`${isScrolled && 'bg-[#353540]'} fixed top-0 w-full p-2 px-4 mb-8 justify-between items-center md:hidden flex text-md text-[#ECECF1] border h-10 border-gray-600`}>
         <MenuIcon onClick={handleNav} className='h-6 w-6'/>
         <p>New Chat</p>
         <div onClick={createNewChat} className='cursor-pointer'>

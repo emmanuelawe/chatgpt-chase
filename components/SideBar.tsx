@@ -30,7 +30,7 @@ const [chats, loading, error] = useCollection(
               <ModelSelection />
             </div>
 
-            <div className="flex flex-col space-y-2 my-2 overflow-y-auto">
+            <div className="flex flex-col space-y-2 my-2 scrollbar-hide overflow-y-auto max-h-80">
 
               {loading && (
                 <div className="animate-pulse text-center text-[#ECECF1]">
