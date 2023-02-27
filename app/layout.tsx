@@ -24,7 +24,7 @@ export default async function RootLayout({
             <Login />
           ): (
         <div className='flex'>
-          <div className='bg-[#212023] max-w-xs h-screen 
+          <div className='bg-[#212023] max-w-xs h-full 
           md:min-w-[16.4rem]'>
       <SideBar />
           </div>
@@ -32,7 +32,7 @@ export default async function RootLayout({
       {/* Client Provider - Notification */}
       <ClientProvider />
 
-      <div className='bg-[#353540] flex-grow md:flex-1'>
+      <div className='bg-[#353540] flex-grow flex-1'>
         <NavBar />
       {children}
       </div>

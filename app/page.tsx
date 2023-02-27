@@ -4,7 +4,7 @@ import { ExclamationIcon, LightningBoltIcon, MenuAlt1Icon, SunIcon } from '@hero
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen
+    <div className="flex flex-col items-center justify-center h-full
     px-2 text-[#ECECF1]">
 
       <h1 className="mt-10 text-4xl font-semibold mb-10">ChatGPT</h1>
