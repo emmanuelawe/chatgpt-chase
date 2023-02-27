@@ -16,6 +16,7 @@ const ChatRow = ({id}: Props) => {
     const router = useRouter()
     const {data: session} = useSession()
     const [active, setActive] = useState(false)
+    const [nav, setNav] = useState(false)
 
     const [messages] = useCollection(
         collection(db, 'users', session?.user?.email!, 'chats', id, 'messages')
@@ -37,7 +38,8 @@ const ChatRow = ({id}: Props) => {
 
 
   return (
-    <Link className={`chatRow overflow-hidden justify-center ${active && 'bg-[#353540]'}`}
+    <Link 
+    className={`chatRow overflow-hidden justify-center ${active && 'bg-[#353540]'}`}
     href={`/chat/${id}`}
     >
         <ChatAlt2Icon className="h-5 w-5" />

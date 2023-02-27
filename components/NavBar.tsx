@@ -95,7 +95,9 @@ const [chats, loading, error] = useCollection(
               )}
             {/* Map through the Chat Rows */}
             {chats?.docs.map(chat => (
-              <ChatRow key={chat.id} id={chat.id} />
+              <div key={chat.id} onClick={handleNav} >
+              <ChatRow id={chat.id}  />
+              </div>
             ))}
             </div>
         </div>
