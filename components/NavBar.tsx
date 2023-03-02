@@ -66,7 +66,7 @@ const [chats, loading, error] = useCollection(
         {/* The slide animation of the Side bar when Menu Icon is clicked */}
 
         <div className={nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/10' : ''}>
-    <div className={nav ? 'fixed left-0 top-0 w-[65%] sm:w-[60%] md:w-[45%] h-screen bg-[#212023]  px-8 ease-in duration-500' 
+    <div className={nav ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#212023]  px-8 ease-in duration-500' 
     : 'fixed left-[-100%] top-0 ease-in duration-500'}>
         
         <div className="flex flex-col h-screen">
